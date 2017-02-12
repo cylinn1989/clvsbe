@@ -4,9 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var home = require('./routes/home');
 
 var app = express();
 
@@ -21,16 +24,31 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  // store:new RedisStore({
+  // user:{
+  //     userid:1,
+  //     username:"linn"
+  // },
+  //     error:"我是error"
+  // }),
+  cookie:{maxAge:80000},
+  resave:false,
+  saveUninitialized:false,
+  secret:"I am session"
+}));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/home/',home);
 
-// catch 404 and forward to error handler
+//catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
