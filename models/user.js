@@ -8,5 +8,5 @@ var UserScheme =new base.Schema({
     pwd: String
 });
 UserScheme.index({mobile:1},{"background" : true});//设置索引
-var UserEntity = base.mongoose.model('UserEntity',UserScheme,'users');//指定在数据库中的collection名称为user
+var UserEntity = base.mongoose.model('user',UserScheme,'user');//指定在数据库中的collection名称为user
 exports.user  = UserEntity;//导出实体
