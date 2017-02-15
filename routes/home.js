@@ -19,7 +19,7 @@ router.post('/',function(req,res,next){
     user.count(query_doc, function(err, doc){
         if(doc >= 1){
             console.log(query_doc.uid + ": login success in " + new Date()+query_doc.pwd);
-            req.session.user = user;
+            req.session.user = query_doc;
             return res.redirect('/home/logined');
         }else{
             console.log(query_doc.uid + ": login failed in " + new Date()+query_doc.pwd);
@@ -37,7 +37,12 @@ router.post('/',function(req,res,next){
 });
 
 router.get('/logined', function(req, res, next) {
-    res.render('home', { title: 'Home' });
+    if(req.session.user)
+        return res.render('home', { title: 'Home' });
+    else{
+        req.session.error = "请先登录";
+        return res.redirect('/home');
+    }
 });
 
 router.get('/logout',function(req,res,next){
@@ -45,5 +50,17 @@ router.get('/logout',function(req,res,next){
     req.session.error=null;
     return res.redirect('/home')
 });
+
+router.get('/getuser',function (req,res,next) {
+    var user_json=[{total:1},{rows:1},{uid:1,pwd:1}];
+    if(req.session.user){
+        console.log(user_json);
+        return  user_json;
+    }
+    else{
+        req.session.error = "请先登录";
+        return res.redirect('/home');
+    }
+})
 
 module.exports = router;
