@@ -51,16 +51,26 @@ router.get('/logout',function(req,res,next){
     return res.redirect('/home')
 });
 
-router.get('/getuser',function (req,res,next) {
-    var user_json=[{total:1},{rows:1},{uid:1,pwd:1}];
-    if(req.session.user){
-        console.log(user_json);
-        return  user_json;
-    }
-    else{
-        req.session.error = "请先登录";
-        return res.redirect('/home');
-    }
+router.get('/getuser',
+    function (req,res,next) {
+        if(req.session.user){
+        //     var users = [{"uid":"","pwd":""}];   {"total":24,"rows":[...]}
+            user.find({},[],function (err,users) {
+                console.log(users.length);
+                var json = {total:users.length,rows:[]}
+                for(i=0;i<user.length;i++)
+                    json.rows.push(users[i]);
+                json.rows.pop();
+                console.log(json);
+                res.send(json);
+            });
+
+        }
+        else{
+            req.session.error = "请先登录";
+            return res.redirect('/home');
+        }
 })
+
 
 module.exports = router;
