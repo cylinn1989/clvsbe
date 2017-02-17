@@ -58,9 +58,8 @@ router.get('/getuser',
             user.find({},[],function (err,users) {
                 console.log(users.length);
                 var json = {total:users.length,rows:[]}
-                for(i=0;i<user.length;i++)
+                for(i=0;i<users.length;i++)
                     json.rows.push(users[i]);
-                json.rows.pop();
                 console.log(json);
                 res.send(json);
             });
@@ -70,7 +69,38 @@ router.get('/getuser',
             req.session.error = "请先登录";
             return res.redirect('/home');
         }
-})
+});
+
+router.post('/newuser',
+    function (req,res,next) {
+        console.log("uid:"+req.body.uid+"||pwd:"+req.body.pwd);
+        user.create({"uid":req.body.uid,"pwd":req.body.pwd},function (err) {
+            if(err)
+                res.send({result:"Fail"});
+            else
+                res.send({result:"Success"});
+        })
+
+    });
+
+router.post('/deleteuser',
+    function (req,res,next) {
+        // console.log(req.body.rows.length);
+        console.log(req.body.total);
+        console.log(req.body);
+        console.log(req.body["rows[0][uid]"]);
+        var error = "";
+        for(var i=0;i<req.body.total;i++) {
+            console.log("uid:" + req.body["rows[" + i + "][uid]"] + "||pwd:" + req.body["rows[" + i + "][pwd]"]);
+            user.remove({"uid":req.body["rows[" + i + "][uid]"],"pwd":req.body["rows[" + i + "][pwd]"]},function (err) {
+                status =+err;
+            })
+        }
+        if(error!="")
+            res.send({result:"Fail",err:error});
+        else
+            res.send({result:"Success",err:""});
+    })
 
 
 module.exports = router;
