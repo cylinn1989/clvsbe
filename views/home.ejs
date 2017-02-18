@@ -45,8 +45,7 @@ Layout = null;
     </div>
 
     <div id="toolbar" class="btn-group">
-        <button id="btn_add" type="button" class="btn btn-default">
-            <!--data-toggle="modal" data-target="#new">-->
+        <button id="btn_add" type="button" class="btn btn-default" data-toggle="modal" data-target="#new">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
         </button>
         <button id="btn_edit" type="button" class="btn btn-default">
@@ -55,24 +54,6 @@ Layout = null;
         <button id="btn_delete" type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
         </button>
-    </div>
-
-    <!--通知框-->
-    <div class="modal fade" id="message" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="message-text">
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <label class="control-label col-sm-1" >成功</label>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
     </div>
 
     <!--新建-->
@@ -84,24 +65,17 @@ Layout = null;
                         &times;
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
-                        新增
+                        模态框（Modal）标题
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <label class="control-label col-sm-1" for="txt_new_uid">用户名</label>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="txt_new_uid">
-                    </div>
-                    <label class="control-label col-sm-1" for="txt_new_pwd">密码</label>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="txt_new_pwd">
-                    </div>
+                    在这里添加一些文本
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
-                    <button type="button" class="btn btn-primary" id="btn_new_save">
-                        保存
+                    <button type="button" class="btn btn-primary">
+                        提交更改
                     </button>
                 </div>
             </div><!-- /.modal-content -->
