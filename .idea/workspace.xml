@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2271b12a-bf1b-4e2c-8a90-4eab1fcb43ec" name="Default" comment="20170215-17:29">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/clvsbe_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-table/bootstrap-table-editable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-table/bootstrap-table.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap-table/bootstrap-table.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/dist/css/bootstrap-editable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/dist/js/bootstrap-editable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/clvsbe.iml" afterPath="$PROJECT_DIR$/.idea/clvsbe.iml" />
+    <list default="true" id="2271b12a-bf1b-4e2c-8a90-4eab1fcb43ec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/home.js" afterPath="$PROJECT_DIR$/public/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/home.js" afterPath="$PROJECT_DIR$/routes/home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bootstrap/dist/css/bootstrap-editable.css" afterPath="$PROJECT_DIR$/public/bootstrap/dist/css/bootstrap-editable.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bootstrap/dist/js/bootstrap-editable.js" afterPath="$PROJECT_DIR$/public/bootstrap/dist/js/bootstrap-editable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home.ejs" afterPath="$PROJECT_DIR$/views/home.ejs" />
     </list>
     <ignored path="clvsbe.iws" />
@@ -46,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/home.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="39" column="82" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="82" />
+            <state relative-caret-position="315">
+              <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="196" column="29" selection-start-line="196" selection-start-column="29" selection-end-line="196" selection-end-column="29" />
+            <state relative-caret-position="240">
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -119,9 +111,11 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/bootstrap-table/home.js" />
         <option value="$PROJECT_DIR$/temp.js" />
-        <option value="$PROJECT_DIR$/views/home.ejs" />
         <option value="$PROJECT_DIR$/routes/home.js" />
         <option value="$PROJECT_DIR$/public/home.js" />
+        <option value="$PROJECT_DIR$/public/bootstrap/dist/js/bootstrap-editable.js" />
+        <option value="$PROJECT_DIR$/views/home.ejs" />
+        <option value="$PROJECT_DIR$/public/bootstrap/dist/css/bootstrap-editable.css" />
       </list>
     </option>
   </component>
@@ -264,7 +258,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap-table" />
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clvsbe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clvsbe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clvsbe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clvsbe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -449,7 +499,7 @@
       <workItem from="1486948620786" duration="7382000" />
       <workItem from="1486957064154" duration="10902000" />
       <workItem from="1487032552080" duration="36779000" />
-      <workItem from="1487437623919" duration="17270000" />
+      <workItem from="1487437623919" duration="18010000" />
     </task>
     <task id="LOCAL-00001" summary="20170213-18:29">
       <created>1486981806732</created>
@@ -465,11 +515,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487150963059</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="20170220-16:41">
+      <created>1487580146629</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1487580146629</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92980000" />
+    <option name="totallyTimeSpent" value="93720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="23" width="1440" height="800" extended-state="6" />
@@ -529,7 +586,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="20170213-18:29" />
     <MESSAGE value="20170215-17:29" />
-    <option name="LAST_COMMIT_MESSAGE" value="20170215-17:29" />
+    <MESSAGE value="20170220-16:41" />
+    <option name="LAST_COMMIT_MESSAGE" value="20170220-16:41" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -587,6 +645,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -641,6 +700,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -812,6 +872,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -846,27 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/bootstrap/dist/css/bootstrap-editable.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bootstrap/dist/js/bootstrap-editable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1357372273000" expanded="true" signature="21481:21487" ph=" " />
-            <marker date="1357372273000" expanded="true" signature="21576:21582" ph=" " />
-            <marker date="1357372273000" expanded="true" signature="21733:21744" ph="..." />
-            <marker date="1357372273000" expanded="true" signature="31473:31507" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/bootstrap-table/bootstrap-table.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -885,14 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/home.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="39" column="82" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -903,8 +935,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="196" column="29" selection-start-line="196" selection-start-column="29" selection-end-line="196" selection-end-column="29" />
+        <state relative-caret-position="240">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bootstrap/dist/js/bootstrap-editable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102105">
+          <caret line="6807" column="0" selection-start-line="6807" selection-start-column="0" selection-end-line="6807" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1487580306000" expanded="true" signature="121222:121256" ph="..." />
+            <marker date="1487580306000" expanded="true" signature="180654:180660" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bootstrap/dist/css/bootstrap-editable.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="663" column="0" selection-start-line="663" selection-start-column="0" selection-end-line="663" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
           <folding />
         </state>
       </provider>
