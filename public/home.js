@@ -9,6 +9,9 @@ $(function () {
     oButtonInit.Init();
 });
 
+var pwd_search='';
+var uid_search='';
+
 
 var TableInit = function () {
 
@@ -24,9 +27,9 @@ var TableInit = function () {
             striped: true,                      //是否显示行间隔色
             cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,                   //是否显示分页（*）
-            sortable: false,                     //是否启用排序
+            sortable: false,                    //是否启用排序
             sortOrder: "asc",                   //排序方式
-            queryParams: oTableInit.queryParams,//传递参数（*）
+            queryParams:oTableInit.queryParams, //传递参数（*）
             sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
             pageNumber:1,                       //初始化加载第一页，默认第一页
             pageSize: 10,                       //每页的记录行数（*）
@@ -38,38 +41,108 @@ var TableInit = function () {
             minimumCountColumns: 1,             //最少允许的列数
             clickToSelect: true,                //是否启用点击选中行
             height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-            uniqueId: "pwd",                     //每一行的唯一标识，一般为主键列
+            uniqueId: 'id',                     //每一行的唯一标识，一般为主键列
             showToggle:true,                    //是否显示详细视图和列表视图的切换按钮
             cardView: false,                    //是否显示详细视图
-            detailView: false,                   //是否显示父子表
+            detailView: false,                  //是否显示父子表
             columns: [{
                 checkbox: true
+            }, {
+                field:'_id',
+                title:'序号',
+                visible:false,
             }, {
                 field: 'uid',
                 title: '用户名'
             }, {
                 field: 'pwd',
-                title: '密码'
+                title: '密码',
+                editable:
+                {
+                    type:'text',
+                    title:'密码',
+                    validate:function(v){
+                        if (!v)
+                            return '密码不能为空';
+                    }
+                }
             }],
+            onEditableSave: function (field, row, oldValue, $el) {
+
+                $.ajax({
+                    type: "post",
+                    url: "/home/edituser",
+                    data: row,
+                    dataType: 'JSON',
+                    success: function (data, status) {
+                        if (status == "success") {
+                            alert('提交数据成功');
+                        }
+                    },
+                    error: function () {
+                        alert('编辑失败');
+                    },
+                    complete: function () {
+
+                    }
+
+                });
+            }
             // onExpandRow: function (index, row, $detail) {
-            //     oInit.InitSubTable(index, row, $detail);
+            //     oTableInit.InitSubTable(index, row, $detail);
             // }
-            onDblClickRow:function(item, $element){resource_addWindow(item.oid);}
+            // onDblClickRow:function(item, $element){resource_addWindow(item.oid);}
         });
     };
 //
     //得到查询的参数
     oTableInit.queryParams = function (params) {
-        var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-            limit: params.limit,   //页面大小
-            offset: params.offset,  //页码
-            uid: $("#uid").val(),
-            pwd: $("#pwd").val()
-        };
+        var temp ={};
+        if(uid_search!='')
+            temp["uid"]=uid_search;
+        if(pwd_search!='')
+            temp["pwd"]=pwd_search;
         return temp;
     };
+
+    //初始化子表格(无线循环)
+    // oTableInit.InitSubTable = function (index, row, $detail) {
+    //     var parentid = row.MENU_ID;
+    //     var cur_table = $detail.html('<table></table>').find('table');
+    //     $(cur_table).bootstrapTable({
+    //         url: '/api/MenuApi/GetChildrenMenu',
+    //         method: 'get',
+    //         queryParams: { strParentID: parentid },
+    //         ajaxOptions: { strParentID: parentid },
+    //         clickToSelect: true,
+    //         detailView: true,//父子表
+    //         uniqueId: "MENU_ID",
+    //         pageSize: 10,
+    //         pageList: [10, 25],
+    //         columns: [{
+    //             checkbox: true
+    //         }, {
+    //             field: 'MENU_NAME',
+    //             title: '菜单名称'
+    //         }, {
+    //             field: 'MENU_URL',
+    //             title: '菜单URL'
+    //         }, {
+    //             field: 'PARENT_ID',
+    //             title: '父级菜单'
+    //         }, {
+    //             field: 'MENU_LEVEL',
+    //             title: '菜单级别'
+    //         }, ],
+    //         //无线循环取子表，直到子表里面没有记录
+    //         onExpandRow: function (index, row, $Subdetail) {
+    //             oInit.InitSubTable(index, row, $Subdetail);
+    //         }
+    //     });
+    // };
     return oTableInit;
 };
+
 
 
 var ButtonInit = function () {
@@ -92,7 +165,7 @@ var ButtonInit = function () {
             if(selRow){
                 var datas = {total:selRow.length,rows:[]};
                 for(var i=0;i<selRow.length;i++) {
-                    datas.rows.push({uid: selRow[i].uid, pwd: selRow[i].pwd});
+                    datas.rows.push({id:selRow[i]._id,uid: selRow[i].uid, pwd: selRow[i].pwd});
                 }
                 $.ajax({
                     type: "POST",
@@ -113,6 +186,18 @@ var ButtonInit = function () {
                     }
                 })
             }
+        });
+
+        $("#btn_query").click(function(){
+            if($("#txt_search_uid").val()!='')
+                uid_search=$("#txt_search_uid").val();
+            else
+                uid_search='';
+            if($("#txt_search_pwd").val()!='')
+                pwd_search=$("#txt_search_pwd").val();
+            else
+                pwd_search='';
+            $("#tb_user").bootstrapTable('refresh');
         });
 
         //按钮事件--新建保存
@@ -141,6 +226,8 @@ var ButtonInit = function () {
                 }
             })
         });
+
+
 
 
     }

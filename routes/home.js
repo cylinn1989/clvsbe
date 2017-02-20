@@ -55,7 +55,14 @@ router.get('/getuser',
     function (req,res,next) {
         if(req.session.user){
         //     var users = [{"uid":"","pwd":""}];   {"total":24,"rows":[...]}
-            user.find({},[],function (err,users) {
+            console.log(req.query);
+            var conditions = {};
+            if(req.query.uid)
+                conditions["uid"]=req.query.uid
+            if(req.query.pwd)
+                conditions["pwd"]=req.query.pwd
+            console.log(conditions);
+            user.find(conditions,[],function (err,users) {
                 console.log(users.length);
                 var json = {total:users.length,rows:[]}
                 for(i=0;i<users.length;i++)
@@ -92,7 +99,7 @@ router.post('/deleteuser',
         var error = "";
         for(var i=0;i<req.body.total;i++) {
             console.log("uid:" + req.body["rows[" + i + "][uid]"] + "||pwd:" + req.body["rows[" + i + "][pwd]"]);
-            user.remove({"uid":req.body["rows[" + i + "][uid]"],"pwd":req.body["rows[" + i + "][pwd]"]},function (err) {
+            user.remove({"_id":req.body["rows[" + i + "][id]"]},function (err) {
                 status =+err;
             })
         }
@@ -100,6 +107,17 @@ router.post('/deleteuser',
             res.send({result:"Fail",err:error});
         else
             res.send({result:"Success",err:""});
+    });
+
+router.post('/edituser',
+    function (req,res,next) {
+        console.log(req.body);
+        user.update({"_id":req.body._id},req.body,function (err) {
+            if(err)
+                res.send({result:"Fail"});
+            else
+                res.send({result:"Success"});
+        })
     })
 
 
