@@ -10,6 +10,7 @@ var RedisStore = require('connect-redis')(session);
 var index = require('./routes/index');
 var users = require('./routes/users');
 var home = require('./routes/home');
+var upload = require('./routes/upload');
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.use(session({
 app.use('/', index);
 app.use('/users', users);
 app.use('/home/',home);
+app.use('/upload/',upload);
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {

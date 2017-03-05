@@ -54,7 +54,7 @@ router.get('/logout',function(req,res,next){
 router.get('/getuser',
     function (req,res,next) {
         if(req.session.user){
-        //     var users = [{"uid":"","pwd":""}];   {"total":24,"rows":[...]}
+        //     var users = {"uid":"","pwd":""};   {"total":24,"rows":[...]}
             console.log(req.query);
             var conditions = {};
             if(req.query.uid)
