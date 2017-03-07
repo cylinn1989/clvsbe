@@ -11,6 +11,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var home = require('./routes/home');
 var upload = require('./routes/upload');
+var media = require('./routes/media');
 
 var app = express();
 
@@ -43,6 +44,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/home/',home);
 app.use('/upload',upload);
+app.use('/media',media);
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {
