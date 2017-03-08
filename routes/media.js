@@ -5,7 +5,20 @@ var fs = require('fs');
 var rd = require('rd');
 var path = require('path');
 var express = require('express');
+var ffmpeg = require('fluent-ffmpeg');
 var router = express.Router();
+router.get('/getmedia', function (req, res) {
+    // readBigFileEntry(__dirname+'/../media/CityOfStars.mp4',res);
+    res.contentType('flv');
+    // make sure you set the correct path to your video file storage
+    var pathToMovie = __dirname+'/../media/CityOfStars.mp4';
+    console.log(pathToMovie);
+    var proc = ffmpeg(pathToMovie).format('flv').on('end', function() {
+        console.log('file has been converted succesfully');
+    }).on('error', function(err) {
+        console.log('an error happened: ' + err.message);
+    }).pipe(res, {end:true});
+});
 
 router.get('/', function(req, res, next) {
     return res.render('media');
@@ -73,11 +86,8 @@ function readBigFileEntry(filename, response) {
         readStream.pipe(response);
 }
 
-var page_count = 20;//分页条数
-router.get('/getmedia', function (req, res) {
-    getFileInfo(vdo_path);
-    readBigFileEntry(__dirname+'/../media/CityOfStars.mp4',res);
-});
+// var page_count = 20;//分页条数
+
 router.get('/getmedialist', function (req, res) {
     getFileInfo(vdo_path);
     return res.send(vdo_info_ls);
