@@ -1,10 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>小视频</title>
+    <style>
+        /*!*全局样式*!*/
+        /** {*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
 
+        /*a {*/
+            /*text-decoration: none;*/
+        /*}*/
+
+        /*body {*/
+            /*line-height: 1;*/
+            /*background: #FFF;*/
+        /*}*/
+        /*body {*/
+            /*font-family: "Microsoft Yahei";*/
+            /*background: #f4f4f4;*/
+            /*min-width: 1000px;*/
+            /*height: 100%;*/
+        /*}*/
+        /*主体居中*/
+        .container {
+            width: 98%;
+            position: relative;
+            margin-bottom: 20px;
+            margin: 0 auto;
+        }
+        .photo {
+            display: block;
+            width: 225px;
+            hight: 240px;
+            background-color: #fff;
+            border: 1px solid #e2e2e2;
+        }
+
+        .photo .content {
+            margin: 0 10px  ;
+            font-size: 14px;
+            color: #777;
+            line-height: 20px;
+            word-break: break-all;
+        }
+
+        /*显示加载*/
+        /*#load-over{*/
+            /*width: 95%;*/
+            /*margin: 0 auto;*/
+            /*border-bottom: 1px #ccc solid;*/
+            /*border-top: 1px #ccc solid;*/
+            /*padding: 20px 0px;*/
+            /*text-align: center;*/
+            /*margin-bottom: 30px;*/
+            /*color: #999;*/
+        /*}*/
+    </style>
+</head>
+
+<body>
+<!--"photo-box"为瀑布流 图片容器-->
+<div class="container">
+    <!--"photo"显示视频缩略图与图片信息-->
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(2)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+
+
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(3)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(4)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(5)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(6)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(7)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(8)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(9)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(10)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(11)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(12)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+    <a class="photo" target="_blank" href="#">
+        [站外图片上传中……(13)]
+        <div class="content">
+            欢迎来到XXX(公告或广告位)
+        </div>
+    </a>
+
+</div>
+
+<!--<div id="load-over" style="">-->
+    <!--加载中...-->
+<!--</div>-->
 </body>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/minigrid/minigrid.min.js"></script><!--  轻量级瀑布流插件 具体可搜索minigrid了解 -->
+<script>
+    (function(){
+        var grid = new Minigrid({
+            container:'.container',
+            item:'.photo',
+            gutter:6
+        });
+        grid.mount();
+        window.addEventListener('resize',function(){
+            grid.mount();
+        });
+        //--获取视频缩略图--
+//        function vload(obj) {
+//            $(obj).removeAttr("poster");
+//            var vimg = $("<img/>",{width:"100%"})[0];
+//            captureImage(obj, vimg);
+//            $(obj).after(vimg);
+//            obj.remove();
+//            Minigrid({
+//                container:'.container',
+//                item:'.photo',
+//                gutter:6
+//            });
+//        };
+//        var scale = 0.8; //缩放
+//        function captureImage(video, output) { //截图
+//            try {
+//                var videocanvas = $("<canvas/>")[0];
+//                videocanvas.width = video.videoWidth * scale;
+//                videocanvas.height = video.videoHeight * scale;
+//                videocanvas.getContext('2d').drawImage(video, 0, 0, videocanvas.width, videocanvas.height);
+//                output.src = videocanvas.toDataURL("image/png");
+//                delete videocanvas;
+//            } catch(e) {
+//                output.src = "/static/img/status.gif"; //--status.gif为加载动画
+//            }
+//        };
+
+    })();
+</script>
 </html>
